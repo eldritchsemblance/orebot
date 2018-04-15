@@ -22,6 +22,11 @@ const winstonLogger = new winston.Logger({
     exitOnError: false,
 })
 
+winstonLogger.remove(winstonLogger.transports.Console);
+winstonLogger.add(winstonLogger.transports.Console, {
+    colorize: true
+});
+
 const stream = {
     write: (message, encoding) => {
         winstonLogger.info(message)
