@@ -1,7 +1,7 @@
 const winston = require('winston')
 winston.emitErrs = true
 
-const logger = new winston.Logger({
+const winstonLogger = new winston.Logger({
     transports: [
         new winston.transports.File({
             level: 'info',
@@ -24,8 +24,12 @@ const logger = new winston.Logger({
 
 const stream = {
     write: (message, encoding) => {
-        logger.info(message)
+        winstonLogger.info(message)
     }
 }
 
-module.exports = { logger, stream }
+const morgan = require('morgan')
+
+const combinedLogger = morgan('combined', { 'stream': winstonLogger.stream })
+
+module.exports = { logger: combinedLogger }
