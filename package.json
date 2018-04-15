@@ -1,0 +1,30 @@
+{
+  "name": "orebot",
+  "version": "1.0.0",
+  "description": "One Roll Engine Dicebot for Discord",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.0"
+  },
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eldritchsemblance/orebot.git"
+  },
+  "keywords": [
+    "dicebot",
+    "discord",
+    "ore"
+  ],
+  "author": "Eldritch Semblance",
+  "license": "UNILICENSE",
+  "bugs": {
+    "url": "https://github.com/eldritchsemblance/orebot/issues"
+  },
+  "homepage": "https://github.com/eldritchsemblance/orebot#readme"
+}
