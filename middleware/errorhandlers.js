@@ -1,7 +1,7 @@
 const { log } = require('../utils')
 
 const error500Handler = (err, req, res, next) => {
-  log.error(err)
+  log.error(`${err.message}`)
   res.status(500).json({ error: 'Something went wrong.' })
 }
 
