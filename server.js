@@ -34,45 +34,27 @@ const bot = new Discord.Client({
 })
 
 bot.on('ready', (evt) => {
-    console.info('Connected');
-    console.info('Logged in as: ');
-    console.info(bot.username + ' - (' + bot.id + ')');
+  console.info('Connected');
+  console.info('Logged in as: ');
+  console.info(bot.username + ' - (' + bot.id + ')');
 })
 
 bot.on('message', (user, userID, channelID, message, evt) => {
   if (message.substring(0, 1) == '!') {
-          var args = message.substring(1).split(' ');
-          var cmd = args[0];
+    var args = message.substring(1).split(' ');
+    var cmd = args[0];
 
-          args = args.splice(1);
-          switch(cmd) {
-              // !ping
-              case 'ping':
-                  bot.sendMessage({
-                      to: channelID,
-                      message: 'Pong!'
-                  });
-              break;
-              // Just add any case commands if you want to..
-           }
-       }
-  /*if (message.substring(0, 1) == '/ore') {
-    const args = message.substring(5).split(' ');
-    const cmd = args[0];
-
-    const number = args ? Number.parseInt(args) : 1
-
-    const rolls = ore.roll(number)
-    const sets = rolls.rolls.sets.map((set) => {
-      return ore.stringify(set)
-    })
-
-    const rollText = `${user} rolls ${number}d: ${ rolls.rolls.join()}${sets.length ? `, ${sets.join()}` : ''}`
-
-    bot.sendMessage({
-      to: channelID,
-      message: rollText
-    })*/
+    args = args.splice(1);
+    switch(cmd) {
+      // !ping
+      case 'ping':
+      bot.sendMessage({
+        to: channelID,
+        message: 'Pong!'
+      });
+      break;
+      // Just add any case commands if you want to..
+    }
   }
 })
 
