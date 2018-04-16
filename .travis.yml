@@ -2,3 +2,10 @@ language: node_js
 node_js:
 - '0.11'
 - '0.10'
+deploy:
+  provider: heroku
+  api_key:
+    secure: QFlZ01jpx2Kip46WMTrYq8fdbI8sBe1nPHflEHCJACqNVZfOrDTfDv8LEiUhSytXjYPN+2UAOF1FIz4ZPvVSYx55RwBoDZLuwTSV2sCviTqdXUasvEeGoy7hISwaRLh+aPM/CctaYiWX6j+Z0CYZL1JfzwSwf/pVL7ob60X1HqKSNZsf4g+VpuLMY0QftmeonsRi8r/Cjmzs98n6Qm57tnaLw36wuRPxS/T0VHx8aG1rGfZq64J5q0QTcgVU6V54lWbqraRtVV+areSWJe6iEAxn/gcBh2hG08XEHQYLZgAMLSwupY6EbXRtINI3RV7pzXDF6/iGeISEAPskmL1I7j96p9LfcGZj23xccug+sf0M4q3RnfduW05oaUmRdrcLN4KYyu4JketCIpVGxAS0k/DwLdzsmhJa/XzXJiOMkLGYvRSWH4nB4bPqtiBEtYhscavIqLP0x8lt5zNulx4HXgu6YWKFnnwoMoCrSIDByvmZW8x2I2lsEVQzayzvehlYCpP2/oWngSYo4236ZBCe9jhsdphK/QjB23flsyXSK4FhGLwLTchRw5yD6bXu5LbupBcnEmCzEZIJycu2sU2mVZUGeq6f3HhyEKBYeU8ytlHQtpGgSKuxF+ymwU9aCy6l5E9Y2NszBRHH1G2mPDU3fAZuJ8bD1bzCXN/4URH6Y+w=
+  app: discord-orebot
+  on:
+    repo: eldritchsemblance/orebot

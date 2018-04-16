@@ -22,11 +22,6 @@ const winstonLogger = new winston.Logger({
     exitOnError: false,
 })
 
-winstonLogger.remove(winstonLogger.transports.Console);
-winstonLogger.add(winstonLogger.transports.Console, {
-    colorize: true
-});
-
 const stream = {
     write: (message, encoding) => {
         winstonLogger.info(message)
@@ -35,6 +30,6 @@ const stream = {
 
 const morgan = require('morgan')
 
-const combinedLogger = morgan('combined', { 'stream': winstonLogger.stream })
+const combinedLogger = morgan('combined', { 'stream': stream })
 
 module.exports = { logger: combinedLogger }

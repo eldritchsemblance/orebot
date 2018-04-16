@@ -21,6 +21,7 @@ describe('dice', () => {
         dXX({}),
         dXX([]),
         dXX(false),
+        dXX(NaN),
         dXX(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -54,6 +55,7 @@ describe('dice', () => {
         dice.d2({}),
         dice.d2([]),
         dice.d2(false),
+        dice.d2(NaN),
         dice.d2(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -87,6 +89,7 @@ describe('dice', () => {
         dice.d3({}),
         dice.d3([]),
         dice.d3(false),
+        dice.d3(NaN),
         dice.d3(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -120,6 +123,7 @@ describe('dice', () => {
         dice.d4({}),
         dice.d4([]),
         dice.d4(false),
+        dice.d4(NaN),
         dice.d4(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -153,6 +157,7 @@ describe('dice', () => {
         dice.d6({}),
         dice.d6([]),
         dice.d6(false),
+        dice.d6(NaN),
         dice.d6(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -186,6 +191,7 @@ describe('dice', () => {
         dice.d8({}),
         dice.d8([]),
         dice.d8(false),
+        dice.d8(NaN),
         dice.d8(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -219,6 +225,7 @@ describe('dice', () => {
         dice.d10({}),
         dice.d10([]),
         dice.d10(false),
+        dice.d10(NaN),
         dice.d10(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -252,6 +259,7 @@ describe('dice', () => {
         dice.d12({}),
         dice.d12([]),
         dice.d12(false),
+        dice.d12(NaN),
         dice.d12(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -285,6 +293,7 @@ describe('dice', () => {
         dice.d20({}),
         dice.d20([]),
         dice.d20(false),
+        dice.d20(NaN),
         dice.d20(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
@@ -318,6 +327,7 @@ describe('dice', () => {
         dice.d100({}),
         dice.d100([]),
         dice.d100(false),
+        dice.d100(NaN),
         dice.d100(Number.MIN_SAFE_INTEGER),
       ]
       rolls.forEach((roll) => {
