@@ -7,3 +7,8 @@ const app = express()
 app.use(logger)
 
 app.use(cors);
+
+
+app.all('*', (req, res) => {
+  res.status(404).send('Not found', 404);
+});
