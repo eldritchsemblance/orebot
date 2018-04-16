@@ -43,7 +43,7 @@ bot.on('message', (message) => {
       return ore.stringify(set)
     }).join()}]` : 'No sets rolled.'
 
-    const widest = roll.widestSets ? `Widest Sets: []${
+    const widest = roll.widestSets ? `Widest Sets: [${
       roll.widestSets.map((set) => {
         return ore.stringify(set)
       }).join()
