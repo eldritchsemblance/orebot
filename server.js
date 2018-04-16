@@ -29,13 +29,18 @@ app.all('*', (req, res) => {
 
 
 const bot = new Discord.Client({
-  token: process.env.TOKEN,
+  token: process.env.TOKEN || '',
   autorun: true
 })
 
+bot.on('ready', (evt) => {
+    console.info('Connected');
+    console.info('Logged in as: ');
+    console.info(bot.username + ' - (' + bot.id + ')');
+})
+
 bot.on('message', (user, userID, channelID, message, evt) => {
-  // Our bot needs to know if it will execute a command
-  // It will listen for messages that will start with `!`
+
   if (message.substring(0, 4) == '/ore') {
     const args = message.substring(5).split(' ');
     const cmd = args[0];
