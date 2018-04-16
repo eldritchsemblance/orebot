@@ -31,7 +31,7 @@ app.all('*', (req, res) => {
 const bot = new Discord.Client()
 
 bot.on('ready', (evt) => {
-  console.info(`Logged in as ${client.user.tag}!`)
+  console.info(`Logged in as ${bot.user.tag}!`)
 })
 
 bot.on('message', (message) => {
