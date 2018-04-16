@@ -2,7 +2,10 @@
   "name": "orebot",
   "version": "1.0.0",
   "description": "One Roll Engine Dicebot for Discord",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "9.10.x"
+  },
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
