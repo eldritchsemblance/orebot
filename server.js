@@ -38,28 +38,26 @@ bot.on('message', (message) => {
   if (message.content.substring(0,5) === '/ore ') {
     const number = parseInt(message.content.substring(5)) || 1
     const roll = ore.roll(number)
-    const rollHeaderText = `Rolling ${number}d: [${roll.rolls.join()}]`
-    const rollSetsText = roll.sets.length ? `${Sets: [`${
-      roll.sets.map((set) => {
-        return ore.stringify(set)
-      }).join()
-    }`]}` : ''
+    const header = `\nRolling ${number}d: [${roll.rolls.join()}]`
+    const sets = roll.sets.length ? `Sets: [${roll.sets.map((set) => {
+      return ore.stringify(set)
+    }).join()}]` : 'No sets rolled.'
 
-    const rollWidestSetText = roll.widestSets ? `Widest Sets: ${
+    const widest = roll.widestSets ? `Widest Sets: []${
       roll.widestSets.map((set) => {
         return ore.stringify(set)
       }).join()
-    }`: ''
+    }]`: ''
 
-    const rollTallestSetText = roll.tallestSet ? `Tallest Set: ${
+    const tallest = roll.tallestSet ? `Tallest Set: ${
       ore.stringify(roll.tallestSet)
     }` : ''
 
     const rollText = [
-      rollHeaderText,
-      rollSetsText,
-      rollWidestSetText,
-      rollTallestSetText,
+      header,
+      sets,
+      widest,
+      tallest,
     ].filter((text) => {
       return text
     }).join('\n')
