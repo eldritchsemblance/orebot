@@ -61,8 +61,15 @@ bot.on('message', (message) => {
     ].filter((text) => {
       return text
     }).join('\n')
-
-    message.reply(rollText)
+    if (rollText.length <= 2000) {
+      try {
+        message.reply(rollText)
+      } catch (error) {
+        console.error(`Error sending message: ${error}`)
+      }
+    } else {
+      message.reply('Too many dice.  Discord only allows 2000 characters.')
+    }
   }
 })
 
