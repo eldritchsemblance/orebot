@@ -2,7 +2,7 @@
   "name": "orebot",
   "version": "1.0.0",
   "description": "One Roll Engine Dicebot for Discord",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "9.10.x"
   },
@@ -19,6 +19,7 @@
     "mocha": "^5.1.0"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "mocha --exit"
   },
   "repository": {

@@ -1,3 +1,3 @@
-const { logger } = require('./logger')
+const { logger, log } = require('./logging')
 
-module.exports = { logger }
+module.exports = { logger, log }

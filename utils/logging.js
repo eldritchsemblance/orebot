@@ -1,3 +1,4 @@
+const morgan = require('morgan')
 const winston = require('winston')
 winston.emitErrs = true
 
@@ -28,8 +29,6 @@ const stream = {
     }
 }
 
-const morgan = require('morgan')
-
 const combinedLogger = morgan('combined', { 'stream': stream })
 
-module.exports = { logger: combinedLogger }
+module.exports = { logger: combinedLogger, log: winstonLogger }
