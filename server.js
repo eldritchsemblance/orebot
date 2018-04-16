@@ -2,7 +2,7 @@ require('dotenv').config()
 const { logger } = require('./utils')
 const { cors } = require('./middleware')
 const express = require('express')
-const Discord = require('discord.io')
+const Discord = require('discord.js')
 
 const { ore } = require('./lib')
 
@@ -28,10 +28,7 @@ app.all('*', (req, res) => {
 });
 
 
-const bot = new Discord.Client({
-  token: process.env.TOKEN || '',
-  autorun: true
-})
+const bot = new Discord.Client()
 
 bot.on('ready', (evt) => {
   console.info('Connected');
@@ -40,8 +37,8 @@ bot.on('ready', (evt) => {
 })
 
 bot.on('message', (user, userID, channelID, message, evt) => {
-  if (message.substring(0, 1) == '!') {
-    var args = message.substring(1).split(' ');
+  if (message.content.substring(0, 1) == '!') {
+    var args = message.content.substring(1).split(' ');
     var cmd = args[0];
 
     args = args.splice(1);
@@ -57,5 +54,7 @@ bot.on('message', (user, userID, channelID, message, evt) => {
     }
   }
 })
+
+bot.login(process.env.TOKEN || '')
 
 app.listen(process.env.PORT || 80)
