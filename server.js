@@ -31,24 +31,19 @@ app.all('*', (req, res) => {
 const bot = new Discord.Client()
 
 bot.on('ready', (evt) => {
-  console.info('Connected');
-  console.info('Logged in as: ');
-  console.info(bot.username + ' - (' + bot.id + ')');
+  console.info(`Logged in as ${client.user.tag}!`)
 })
 
-bot.on('message', (user, userID, channelID, message, evt) => {
-  if (message.content.substring(0, 1) == '!') {
-    var args = message.content.substring(1).split(' ');
+bot.on('message', (message) => {
+  if (message.substring(0, 1) == '!') {
+    var args = message.substring(1).split(' ');
     var cmd = args[0];
 
     args = args.splice(1);
     switch(cmd) {
       // !ping
       case 'ping':
-      bot.sendMessage({
-        to: channelID,
-        message: 'Pong!'
-      });
+      message.reply('Pong!')
       break;
       // Just add any case commands if you want to..
     }
